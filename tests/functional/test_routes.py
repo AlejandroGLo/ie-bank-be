@@ -30,3 +30,15 @@ def test_create_account(testing_client):
     assert response.status_code == 200
 
 
+def test_get_account(testing_client):
+    response = testing_client.get(
+        '/accounts/1')
+    assert response.status_code == 200
+
+def test_update(testing_client):
+    response = testing_client.put('/accounts/1',json={'name': 'John Doe', 'currency': '€'})
+    assert response.status_code == 200
+
+def test_delete(testing_client):
+    response = testing_client.delete('/accounts/1')
+    assert response.status_code == 200
