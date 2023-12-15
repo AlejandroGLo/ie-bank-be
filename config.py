@@ -24,3 +24,13 @@ class DevelopmentConfig(Config):
     dbname=os.getenv('DBNAME')
     )
     DEBUG = True
+
+class ProductionConfig(Config):
+    SQLALCHEMY_DATABASE_URI = "postgresql://agalvez:ALESECRET@agalvez-db-uat.postgres.database.azure.com/agalvez-db-uat"
+    DEBUG = False
+    #.format(
+        #dbuser=os.getenv("DBUSER"),
+        #dbpass=os.getenv("DBPASS"),
+        #dbhost=os.getenv("DBHOST"),
+        #dbname=os.getenv("DBNAME"),
+    #
