@@ -26,7 +26,7 @@ class DevelopmentConfig(Config):
     DEBUG = True
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = "postgresql://agalvez:ALESECRET@agalvez-db-uat.postgres.database.azure.com/agalvez-db-uat"
+    SQLALCHEMY_DATABASE_URI = "postgresql://iebankdbadmin:ALESECRET@agalvez-db-uat.postgres.database.azure.com/agalvez-db-uat"
     DEBUG = False
     #.format(
         #dbuser=os.getenv("DBUSER"),
