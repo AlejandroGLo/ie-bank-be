@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from dotenv import load_dotenv
 import os
-import psycopg2
+
 app = Flask(__name__)
 
 load_dotenv()
@@ -22,8 +22,8 @@ else:
     print("Running in production mode")
     app.config.from_object('config.ProductionConfig')
 
-db = psycopg2.connect(user="iebankdbadmin", password="{your_password}", host="agalvez-dbsrv-uat.postgres.database.azure.com", port=5432, database="")#SQLAlchemy(app)
-print(db)
+db = SQLAlchemy(app)
+
 from iebank_api.models import Account
 
 with app.app_context():
